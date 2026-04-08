@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congressional Members - Harassment Settlement Vote</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Arial', sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1f4788 0%, #2c5aa0 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .stat-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1f4788;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #999;
+            text-transform: uppercase;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+        
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .state-btn {
+            padding: 12px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        
+        .state-btn:hover {
+            background: #f0f0f0;
+            border-color: #1f4788;
+        }
+        
+        .state-btn.active {
+            background: #1f4788;
+            color: white;
+            border-color: #1f4788;
+        }
+        
+        .members-header {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f4788;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #2c5aa0;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 15px;
+        }
+        
+        .member-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .member-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+        }
+        
+        .member-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        
+        .member-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2c5aa0 0%, #1f4788 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            color: white;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        
+        .member-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #1f4788;
+        }
+        
+        .member-party {
+            font-size: 12px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 3px;
+            width: fit-content;
+            margin-top: 3px;
+        }
+        
+        .member-party.democrat {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+        
+        .member-party.republican {
+            background: #fcebee;
+            color: #c62828;
+        }
+        
+        .member-contact {
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .contact-line {
+            margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .contact-line:last-child {
+            margin-bottom: 12px;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .contact-label {
+            font-weight: 700;
+            color: #666;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .contact-data {
+            font-size: 13px;
+        }
+        
+        .contact-data a {
+            color: #1f4788;
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+        }
+        
+        .contact-data a:hover {
+            text-decoration: underline;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+        }
+        
+        .action-btn {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            height: 32px;
+        }
+        
+        .action-btn.phone {
+            background: #4CAF50;
+            color: white;
+        }
+        
+        .action-btn.phone:hover {
+            background: #45a049;
+        }
+        
+        .action-btn.email {
+            background: #FF9800;
+            color: white;
+        }
+        
+        .action-btn.email:hover {
+            background: #e68900;
+        }
+        
+        .controls {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .control-group {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+        }
+        
+        .control-group label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+        }
+        
+        input, select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 30px;
+            color: #999;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 11px;
+            color: #999;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Congressional Members Voting Record</h1>
+            <p>Representatives who voted against publishing harassment settlement expenditures</p>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Search:</label>
+                <input type="text" id="searchInput" placeholder="Name..." style="width: 150px;">
+            </div>
+            <div class="control-group">
+                <label>Party:</label>
+                <select id="partyFilter" style="width: 120px;">
+                    <option value="">All</option>
+                    <option value="D">Democrats</option>
+                    <option value="R">Republicans</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="stats" id="statsContainer"></div>
+        
+        <h2 style="font-size: 16px; font-weight: 700; color: #1f4788; margin-bottom: 12px;">Select State</h2>
+        <div class="state-grid" id="stateList"></div>
+        
+        <div style="margin-top: 25px;">
+            <div class="members-header" id="selectedState">Choose a state above</div>
+            <div class="members-grid" id="membersList"></div>
+        </div>
+        
+        <div class="footer">Contact information from House.gov | Last updated April 2026</div>
+    </div>
+
+    <script>
+        const members = {
+            'AL': [
+                { name: 'Robert Aderholt', party: 'R', phone: '202-225-4876', email: 'rep.aderholt@mail.house.gov' },
+                { name: 'Shomari Figures', party: 'D', phone: '202-225-4931', email: 'rep.figures@mail.house.gov' }
+            ],
+            'CA': [
+                { name: 'Pete Aguilar', party: 'D', phone: '202-225-3201', email: 'rep.aguilar@mail.house.gov' },
+                { name: 'Ami Bera', party: 'D', phone: '202-225-5716', email: 'rep.bera@mail.house.gov' },
+                { name: 'Judy Chu', party: 'D', phone: '202-225-5464', email: 'rep.chu@mail.house.gov' }
+            ],
+            'CO': [
+                { name: 'Jeff Crank', party: 'R', phone: '202-225-4422', email: 'rep.crank@mail.house.gov' },
+                { name: 'Jason Crow', party: 'D', phone: '202-225-7882', email: 'rep.crow@mail.house.gov' }
+            ],
+            'CT': [
+                { name: 'Joe Courtney', party: 'D', phone: '202-225-2076', email: 'rep.courtney@mail.house.gov' }
+            ],
+            'FL': [
+                { name: 'Gus Bilirakis', party: 'R', phone: '202-225-5755', email: 'rep.bilirakis@mail.house.gov' }
+            ],
+            'GA': [
+                { name: 'Rick Allen', party: 'R', phone: '202-225-2823', email: 'rep.allen@mail.house.gov' }
+            ],
+            'IL': [
+                { name: 'Sean Casten', party: 'D', phone: '202-225-4561', email: 'rep.casten@mail.house.gov' }
+            ],
+            'NY': [
+                { name: 'Hakeem Jeffries', party: 'D', phone: '202-225-5936', email: 'rep.jeffries@mail.house.gov' }
+            ],
+            'OH': [
+                { name: 'Jim Jordan', party: 'R', phone: '202-225-2676', email: 'rep.jordan@mail.house.gov' }
+            ],
+            'TX': [
+                { name: 'Brian Babin', party: 'R', phone: '202-225-1555', email: 'rep.babin@mail.house.gov' }
+            ]
+        };
+
+        const states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
+        
+        const stateNames = { 'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland', 'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi', 'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada', 'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York', 'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont', 'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming' };
+
+        let selected = null;
+
+        function init() {
+            let total = 0, dems = 0, reps = 0;
+            Object.keys(members).forEach(s => {
+                members[s].forEach(m => {
+                    total++;
+                    if (m.party === 'D') dems++;
+                    else reps++;
+                });
+            });
+
+            document.getElementById('statsContainer').innerHTML = `
+                <div class="stat-card"><div class="stat-number">${total}</div><div class="stat-label">Total</div></div>
+                <div class="stat-card"><div class="stat-number">${dems}</div><div class="stat-label">Democrats</div></div>
+                <div class="stat-card"><div class="stat-number">${reps}</div><div class="stat-label">Republicans</div></div>
+                <div class="stat-card"><div class="stat-number">${Object.keys(members).length}</div><div class="stat-label">States</div></div>
+            `;
+
+            const stateList = document.getElementById('stateList');
+            Object.keys(members).sort().forEach(s => {
+                const btn = document.createElement('button');
+                btn.className = 'state-btn';
+                btn.textContent = `${s} (${members[s].length})`;
+                btn.onclick = () => selectState(s, btn);
+                stateList.appendChild(btn);
+            });
+
+            document.getElementById('searchInput').addEventListener('input', display);
+            document.getElementById('partyFilter').addEventListener('change', display);
+        }
+
+        function selectState(s, btn) {
+            document.querySelectorAll('.state-btn.active').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            selected = s;
+            document.getElementById('selectedState').textContent = `Members from ${stateNames[s]}`;
+            display();
+        }
+
+        function display() {
+            const list = document.getElementById('membersList');
+            list.innerHTML = '';
+            
+            if (!selected) return;
+
+            let data = members[selected];
+            const search = document.getElementById('searchInput').value.toLowerCase();
+            const party = document.getElementById('partyFilter').value;
+
+            data = data.filter(m => m.name.toLowerCase().includes(search) && (!party || m.party === party));
+
+            if (!data.length) {
+                list.innerHTML = '<div class="no-results">No members found</div>';
+                return;
+            }
+
+            data.forEach(m => {
+                const init = m.name.split(' ').map(n => n[0]).join('').substring(0, 2);
+                const pc = m.party === 'D' ? 'democrat' : 'republican';
+                const pl = m.party === 'D' ? 'Democrat' : 'Republican';
+                
+                list.innerHTML += `
+                    <div class="member-card">
+                        <div class="member-header">
+                            <div class="member-avatar">${init}</div>
+                            <div>
+                                <div class="member-name">${m.name}</div>
+                                <div class="member-party ${pc}">${pl}</div>
+                            </div>
+                        </div>
+                        <div class="member-contact">
+                            <div class="contact-line">
+                                <span class="contact-label">Phone</span>
+                                <div class="contact-data"><a href="tel:+1-${m.phone.replace(/[^\d]/g, '')}">${m.phone}</a></div>
+                            </div>
+                            <div class="contact-line">
+                                <span class="contact-label">Email</span>
+                                <div class="contact-data"><a href="mailto:${m.email}">${m.email}</a></div>
+                            </div>
+                            <div class="action-buttons">
+                                <a href="tel:+1-${m.phone.replace(/[^\d]/g, '')}" class="action-btn phone">📞</a>
+                                <a href="mailto:${m.email}" class="action-btn email">✉️</a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        init();
+    </script>
+</body>
+</html>
