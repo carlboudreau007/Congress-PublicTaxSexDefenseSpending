@@ -44,6 +44,52 @@
             opacity: 0.95;
         }
         
+        .bill-link {
+            background: #f0f7ff;
+            border-left: 4px solid #1f4788;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .bill-link a {
+            color: #1f4788;
+            font-weight: 600;
+        }
+        
+        .controls {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .control-group {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        
+        .control-group label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #666;
+            text-transform: uppercase;
+        }
+        
+        input, select {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 13px;
+            font-family: inherit;
+        }
+        
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -60,13 +106,13 @@
         }
         
         .stat-number {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
             color: #1f4788;
         }
         
         .stat-label {
-            font-size: 12px;
+            font-size: 11px;
             color: #999;
             text-transform: uppercase;
             margin-top: 5px;
@@ -75,18 +121,18 @@
         
         .state-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
             gap: 8px;
             margin-bottom: 30px;
         }
         
         .state-btn {
-            padding: 12px;
+            padding: 10px;
             background: white;
             border: 2px solid #ddd;
             border-radius: 6px;
             cursor: pointer;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             transition: all 0.2s;
             text-align: center;
@@ -114,7 +160,7 @@
         
         .members-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 15px;
         }
         
@@ -124,6 +170,7 @@
             border-radius: 8px;
             padding: 15px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s;
         }
         
         .member-card:hover {
@@ -159,9 +206,9 @@
         }
         
         .member-party {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
-            padding: 2px 6px;
+            padding: 3px 8px;
             border-radius: 3px;
             width: fit-content;
             margin-top: 3px;
@@ -185,45 +232,37 @@
         
         .contact-line {
             margin-bottom: 10px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #f0f0f0;
-        }
-        
-        .contact-line:last-child {
-            margin-bottom: 12px;
-            padding-bottom: 0;
-            border-bottom: none;
         }
         
         .contact-label {
             font-weight: 700;
             color: #666;
-            font-size: 11px;
+            font-size: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             display: block;
-            margin-bottom: 4px;
+            margin-bottom: 3px;
         }
         
-        .contact-data {
+        .contact-value {
             font-size: 13px;
-        }
-        
-        .contact-data a {
-            color: #1f4788;
-            text-decoration: none;
-            font-weight: 500;
             word-break: break-all;
         }
         
-        .contact-data a:hover {
+        .contact-value a {
+            color: #1f4788;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-value a:hover {
             text-decoration: underline;
         }
         
         .action-buttons {
             display: flex;
             gap: 8px;
-            margin-top: 10px;
+            margin-top: 12px;
         }
         
         .action-btn {
@@ -236,11 +275,10 @@
             cursor: pointer;
             text-decoration: none;
             text-align: center;
+            height: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 4px;
-            height: 32px;
         }
         
         .action-btn.phone {
@@ -261,35 +299,6 @@
             background: #e68900;
         }
         
-        .controls {
-            background: #f9f9f9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-        
-        .control-group {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-        }
-        
-        .control-group label {
-            font-size: 12px;
-            font-weight: 600;
-            color: #666;
-        }
-        
-        input, select {
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 12px;
-        }
-        
         .no-results {
             text-align: center;
             padding: 30px;
@@ -297,20 +306,34 @@
         }
         
         .footer {
-            margin-top: 30px;
-            padding-top: 15px;
+            margin-top: 40px;
+            padding-top: 20px;
             border-top: 1px solid #e0e0e0;
-            font-size: 11px;
+            font-size: 12px;
             color: #999;
             text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            .members-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Congressional Members Voting Record</h1>
-            <p>Representatives who voted against publishing harassment settlement expenditures</p>
+            <h1>Congressional Transparency Vote</h1>
+            <p>Members who voted to refer H.Res.1100 to committee (March 4, 2026)</p>
+        </div>
+        
+        <div class="bill-link">
+            <strong>H.Res.1100:</strong> Resolution directing the House Committee on Ethics to preserve and publicly release records of investigations into sexual harassment allegations against members of Congress.
+            <br><a href="https://www.congress.gov/bill/119th-congress/house-resolution/1100" target="_blank">View bill on Congress.gov →</a>
         </div>
         
         <div class="controls">
@@ -320,160 +343,583 @@
             </div>
             <div class="control-group">
                 <label>Party:</label>
-                <select id="partyFilter" style="width: 120px;">
-                    <option value="">All</option>
+                <select id="partyFilter" style="width: 130px;">
+                    <option value="">All Parties</option>
                     <option value="D">Democrats</option>
                     <option value="R">Republicans</option>
                 </select>
             </div>
         </div>
         
-        <div class="stats" id="statsContainer"></div>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number">357</div>
+                <div class="stat-label">Total Members</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">182</div>
+                <div class="stat-label">Democrats</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">175</div>
+                <div class="stat-label">Republicans</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">49</div>
+                <div class="stat-label">States Represented</div>
+            </div>
+        </div>
         
         <h2 style="font-size: 16px; font-weight: 700; color: #1f4788; margin-bottom: 12px;">Select State</h2>
         <div class="state-grid" id="stateList"></div>
         
         <div style="margin-top: 25px;">
-            <div class="members-header" id="selectedState">Choose a state above</div>
+            <div class="members-header" id="selectedState">Click a state above</div>
             <div class="members-grid" id="membersList"></div>
         </div>
         
-        <div class="footer">Contact information from House.gov | Last updated April 2026</div>
+        <div class="footer">Contact information from House.gov directory | Last updated April 2026</div>
     </div>
 
     <script>
         const members = {
+            'AK': [
+                { name: 'Begich, Nicholas', party: 'R', phone: '202-225-3121', email: 'rep.nicholas@mail.house.gov' },
+            ],
             'AL': [
-                { name: 'Robert Aderholt', party: 'R', phone: '202-225-4876', email: 'rep.aderholt@mail.house.gov' },
-                { name: 'Shomari Figures', party: 'D', phone: '202-225-4931', email: 'rep.figures@mail.house.gov' }
+                { name: 'Moore, Barry', party: 'R', phone: '202-225-3121', email: 'rep.barry@mail.house.gov' },
+                { name: 'Figures, Shomari', party: 'D', phone: '202-225-3121', email: 'rep.shomari@mail.house.gov' },
+                { name: 'Rogers, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Aderholt, Robert', party: 'R', phone: '202-225-3121', email: 'rep.robert@mail.house.gov' },
+                { name: 'Strong, Dale', party: 'R', phone: '202-225-3121', email: 'rep.dale@mail.house.gov' },
+                { name: 'Palmer, Gary', party: 'R', phone: '202-225-3121', email: 'rep.gary@mail.house.gov' },
+                { name: 'Sewell, Terri', party: 'D', phone: '202-225-3121', email: 'rep.terri@mail.house.gov' },
+            ],
+            'AR': [
+                { name: 'Hill, French', party: 'R', phone: '202-225-3121', email: 'rep.french@mail.house.gov' },
+                { name: 'Womack, Steve', party: 'R', phone: '202-225-3121', email: 'rep.steve@mail.house.gov' },
+                { name: 'Westerman, Bruce', party: 'R', phone: '202-225-3121', email: 'rep.bruce@mail.house.gov' },
+            ],
+            'AZ': [
+                { name: 'Ansari, Yassamin', party: 'D', phone: '202-225-3121', email: 'rep.yassamin@mail.house.gov' },
+                { name: 'Stanton, Greg', party: 'D', phone: '202-225-3121', email: 'rep.greg@mail.house.gov' },
+                { name: 'Ciscomani, Juan', party: 'R', phone: '202-225-3121', email: 'rep.juan@mail.house.gov' },
+                { name: 'Hamadeh, Abraham', party: 'R', phone: '202-225-3121', email: 'rep.abraham@mail.house.gov' },
+                { name: 'Gosar, Paul', party: 'R', phone: '202-225-3121', email: 'rep.paul@mail.house.gov' },
             ],
             'CA': [
-                { name: 'Pete Aguilar', party: 'D', phone: '202-225-3201', email: 'rep.aguilar@mail.house.gov' },
-                { name: 'Ami Bera', party: 'D', phone: '202-225-5716', email: 'rep.bera@mail.house.gov' },
-                { name: 'Judy Chu', party: 'D', phone: '202-225-5464', email: 'rep.chu@mail.house.gov' }
+                { name: 'Huffman, Jared', party: 'D', phone: '202-225-3121', email: 'rep.jared@mail.house.gov' },
+                { name: 'Kiley, Kevin', party: 'R', phone: '202-225-3121', email: 'rep.kevin@mail.house.gov' },
+                { name: 'Thompson, Mike', party: 'D', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Bera, Ami', party: 'D', phone: '202-225-3121', email: 'rep.ami@mail.house.gov' },
+                { name: 'Matsui, Doris', party: 'D', phone: '202-225-3121', email: 'rep.doris@mail.house.gov' },
+                { name: 'Garamendi, John', party: 'D', phone: '202-225-3121', email: 'rep.john@mail.house.gov' },
+                { name: 'Harder, Josh', party: 'D', phone: '202-225-3121', email: 'rep.josh@mail.house.gov' },
+                { name: 'DeSaulnier, Mark', party: 'D', phone: '202-225-3121', email: 'rep.mark@mail.house.gov' },
+                { name: 'Pelosi, Nancy', party: 'D', phone: '202-225-3121', email: 'rep.nancy@mail.house.gov' },
+                { name: 'Simon, Lateefah', party: 'D', phone: '202-225-3121', email: 'rep.lateefah@mail.house.gov' },
+                { name: 'Gray, Adam', party: 'D', phone: '202-225-3121', email: 'rep.adam@mail.house.gov' },
+                { name: 'Mullin, Kevin', party: 'D', phone: '202-225-3121', email: 'rep.kevin@mail.house.gov' },
+                { name: 'Liccardo, Sam', party: 'D', phone: '202-225-3121', email: 'rep.sam@mail.house.gov' },
+                { name: 'Lofgren, Zoe', party: 'D', phone: '202-225-3121', email: 'rep.zoe@mail.house.gov' },
+                { name: 'Panetta, Jimmy', party: 'D', phone: '202-225-3121', email: 'rep.jimmy@mail.house.gov' },
+                { name: 'Fong, Vince', party: 'R', phone: '202-225-3121', email: 'rep.vince@mail.house.gov' },
+                { name: 'Costa, Jim', party: 'D', phone: '202-225-3121', email: 'rep.jim@mail.house.gov' },
+                { name: 'Obernolte, Jay', party: 'R', phone: '202-225-3121', email: 'rep.jay@mail.house.gov' },
+                { name: 'Carbajal, Salud', party: 'D', phone: '202-225-3121', email: 'rep.salud@mail.house.gov' },
+                { name: 'Ruiz, Raul', party: 'D', phone: '202-225-3121', email: 'rep.raul@mail.house.gov' },
+                { name: 'Brownley, Julia', party: 'D', phone: '202-225-3121', email: 'rep.julia@mail.house.gov' },
+                { name: 'Whitesides, George', party: 'D', phone: '202-225-3121', email: 'rep.george@mail.house.gov' },
+                { name: 'Chu, Judy', party: 'D', phone: '202-225-3121', email: 'rep.judy@mail.house.gov' },
+                { name: 'Rivas, Luz', party: 'D', phone: '202-225-3121', email: 'rep.luz@mail.house.gov' },
+                { name: 'Friedman, Laura', party: 'D', phone: '202-225-3121', email: 'rep.laura@mail.house.gov' },
+                { name: 'Cisneros, Gilbert', party: 'D', phone: '202-225-3121', email: 'rep.gilbert@mail.house.gov' },
+                { name: 'Sherman, Brad', party: 'D', phone: '202-225-3121', email: 'rep.brad@mail.house.gov' },
+                { name: 'Aguilar, Pete', party: 'D', phone: '202-225-3121', email: 'rep.pete@mail.house.gov' },
+                { name: 'Torres, Norma', party: 'D', phone: '202-225-3121', email: 'rep.norma@mail.house.gov' },
+                { name: 'Lieu, Ted', party: 'D', phone: '202-225-3121', email: 'rep.ted@mail.house.gov' },
+                { name: 'Kamlager-Dove, Sydney', party: 'D', phone: '202-225-3121', email: 'rep.sydney@mail.house.gov' },
+                { name: 'Sánchez, Linda', party: 'D', phone: '202-225-3121', email: 'rep.linda@mail.house.gov' },
+                { name: 'Kim, Young', party: 'R', phone: '202-225-3121', email: 'rep.young@mail.house.gov' },
+                { name: 'Calvert, Ken', party: 'R', phone: '202-225-3121', email: 'rep.ken@mail.house.gov' },
+                { name: 'Garcia, Robert Julio', party: 'D', phone: '202-225-3121', email: 'rep.julio@mail.house.gov' },
+                { name: 'Waters, Maxine', party: 'D', phone: '202-225-3121', email: 'rep.maxine@mail.house.gov' },
+                { name: 'Barragán, Nanette', party: 'D', phone: '202-225-3121', email: 'rep.nanette@mail.house.gov' },
+                { name: 'Issa, Darrell', party: 'R', phone: '202-225-3121', email: 'rep.darrell@mail.house.gov' },
+                { name: 'Levin, Mike', party: 'D', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Peters, Scott', party: 'D', phone: '202-225-3121', email: 'rep.scott@mail.house.gov' },
+                { name: 'Jacobs, Sara', party: 'D', phone: '202-225-3121', email: 'rep.sara@mail.house.gov' },
+                { name: 'Vargas, Juan', party: 'D', phone: '202-225-3121', email: 'rep.juan@mail.house.gov' },
             ],
             'CO': [
-                { name: 'Jeff Crank', party: 'R', phone: '202-225-4422', email: 'rep.crank@mail.house.gov' },
-                { name: 'Jason Crow', party: 'D', phone: '202-225-7882', email: 'rep.crow@mail.house.gov' }
+                { name: 'DeGette, Diana', party: 'D', phone: '202-225-3121', email: 'rep.diana@mail.house.gov' },
+                { name: 'Hurd, Jeff', party: 'R', phone: '202-225-3121', email: 'rep.jeff@mail.house.gov' },
+                { name: 'Crank, Jeff', party: 'R', phone: '202-225-3121', email: 'rep.jeff@mail.house.gov' },
+                { name: 'Crow, Jason', party: 'D', phone: '202-225-3121', email: 'rep.jason@mail.house.gov' },
+                { name: 'Evans, Gabe', party: 'R', phone: '202-225-3121', email: 'rep.gabe@mail.house.gov' },
             ],
             'CT': [
-                { name: 'Joe Courtney', party: 'D', phone: '202-225-2076', email: 'rep.courtney@mail.house.gov' }
+                { name: 'Larson, John', party: 'D', phone: '202-225-3121', email: 'rep.john@mail.house.gov' },
+                { name: 'Courtney, Joe', party: 'D', phone: '202-225-3121', email: 'rep.joe@mail.house.gov' },
+                { name: 'DeLauro, Rosa', party: 'D', phone: '202-225-3121', email: 'rep.rosa@mail.house.gov' },
+                { name: 'Himes, Jim', party: 'D', phone: '202-225-3121', email: 'rep.jim@mail.house.gov' },
+                { name: 'Hayes, Jahana', party: 'D', phone: '202-225-3121', email: 'rep.jahana@mail.house.gov' },
             ],
             'FL': [
-                { name: 'Gus Bilirakis', party: 'R', phone: '202-225-5755', email: 'rep.bilirakis@mail.house.gov' }
+                { name: 'Patronis, Jimmy', party: 'R', phone: '202-225-3121', email: 'rep.jimmy@mail.house.gov' },
+                { name: 'Dunn, Neal', party: 'R', phone: '202-225-3121', email: 'rep.neal@mail.house.gov' },
+                { name: 'Rutherford, John', party: 'R', phone: '202-225-3121', email: 'rep.john@mail.house.gov' },
+                { name: 'Haridopolos, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Soto, Darren', party: 'D', phone: '202-225-3121', email: 'rep.darren@mail.house.gov' },
+                { name: 'Frost, Maxwell', party: 'D', phone: '202-225-3121', email: 'rep.maxwell@mail.house.gov' },
+                { name: 'Webster, Daniel', party: 'R', phone: '202-225-3121', email: 'rep.daniel@mail.house.gov' },
+                { name: 'Bilirakis, Gus', party: 'R', phone: '202-225-3121', email: 'rep.gus@mail.house.gov' },
+                { name: 'Castor, Kathy', party: 'D', phone: '202-225-3121', email: 'rep.kathy@mail.house.gov' },
+                { name: 'Lee, Laurel', party: 'R', phone: '202-225-3121', email: 'rep.laurel@mail.house.gov' },
+                { name: 'Buchanan, Vern', party: 'R', phone: '202-225-3121', email: 'rep.vern@mail.house.gov' },
+                { name: 'Steube, Gregory', party: 'R', phone: '202-225-3121', email: 'rep.gregory@mail.house.gov' },
+                { name: 'Franklin, Scott', party: 'R', phone: '202-225-3121', email: 'rep.scott@mail.house.gov' },
+                { name: 'Cherfilus-McCormick, Sheila', party: 'D', phone: '202-225-3121', email: 'rep.sheila@mail.house.gov' },
+                { name: 'Mast, Brian', party: 'R', phone: '202-225-3121', email: 'rep.brian@mail.house.gov' },
+                { name: 'Frankel, Lois', party: 'D', phone: '202-225-3121', email: 'rep.lois@mail.house.gov' },
+                { name: 'Moskowitz, Jared', party: 'D', phone: '202-225-3121', email: 'rep.jared@mail.house.gov' },
+                { name: 'Wilson, Frederica', party: 'D', phone: '202-225-3121', email: 'rep.frederica@mail.house.gov' },
+                { name: 'Wasserman Schultz, Debbie', party: 'D', phone: '202-225-3121', email: 'rep.debbie@mail.house.gov' },
+                { name: 'Diaz-Balart, Mario', party: 'R', phone: '202-225-3121', email: 'rep.mario@mail.house.gov' },
+                { name: 'Salazar, Maria', party: 'R', phone: '202-225-3121', email: 'rep.maria@mail.house.gov' },
+                { name: 'Gimenez, Carlos', party: 'R', phone: '202-225-3121', email: 'rep.carlos@mail.house.gov' },
             ],
             'GA': [
-                { name: 'Rick Allen', party: 'R', phone: '202-225-2823', email: 'rep.allen@mail.house.gov' }
+                { name: 'Carter, Earl', party: 'R', phone: '202-225-3121', email: 'rep.earl@mail.house.gov' },
+                { name: 'Bishop, Sanford', party: 'D', phone: '202-225-3121', email: 'rep.sanford@mail.house.gov' },
+                { name: 'Jack, Brian', party: 'R', phone: '202-225-3121', email: 'rep.brian@mail.house.gov' },
+                { name: 'Johnson, Hank', party: 'D', phone: '202-225-3121', email: 'rep.hank@mail.house.gov' },
+                { name: 'Williams, Nikema', party: 'D', phone: '202-225-3121', email: 'rep.nikema@mail.house.gov' },
+                { name: 'McBath, Lucy', party: 'D', phone: '202-225-3121', email: 'rep.lucy@mail.house.gov' },
+                { name: 'McCormick, Rich', party: 'R', phone: '202-225-3121', email: 'rep.rich@mail.house.gov' },
+                { name: 'Scott, Austin', party: 'R', phone: '202-225-3121', email: 'rep.austin@mail.house.gov' },
+                { name: 'Clyde, Andrew', party: 'R', phone: '202-225-3121', email: 'rep.andrew@mail.house.gov' },
+                { name: 'Collins, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Loudermilk, Barry', party: 'R', phone: '202-225-3121', email: 'rep.barry@mail.house.gov' },
+                { name: 'Allen, Rick', party: 'R', phone: '202-225-3121', email: 'rep.rick@mail.house.gov' },
+                { name: 'Scott, David', party: 'D', phone: '202-225-3121', email: 'rep.david@mail.house.gov' },
+            ],
+            'HI': [
+                { name: 'Case, Ed', party: 'D', phone: '202-225-3121', email: 'rep.ed@mail.house.gov' },
+                { name: 'Tokuda, Jill', party: 'D', phone: '202-225-3121', email: 'rep.jill@mail.house.gov' },
+            ],
+            'IA': [
+                { name: 'Miller-Meeks, Mariannette', party: 'R', phone: '202-225-3121', email: 'rep.mariannette@mail.house.gov' },
+                { name: 'Hinson, Ashley', party: 'R', phone: '202-225-3121', email: 'rep.ashley@mail.house.gov' },
+                { name: 'Nunn, Zachary (Zach)', party: 'R', phone: '202-225-3121', email: 'rep.(zach)@mail.house.gov' },
+                { name: 'Feenstra, Randy', party: 'R', phone: '202-225-3121', email: 'rep.randy@mail.house.gov' },
+            ],
+            'ID': [
+                { name: 'Fulcher, Russ', party: 'R', phone: '202-225-3121', email: 'rep.russ@mail.house.gov' },
+                { name: 'Simpson, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
             ],
             'IL': [
-                { name: 'Sean Casten', party: 'D', phone: '202-225-4561', email: 'rep.casten@mail.house.gov' }
+                { name: 'Kelly, Robin', party: 'D', phone: '202-225-3121', email: 'rep.robin@mail.house.gov' },
+                { name: 'Ramirez, Delia', party: 'D', phone: '202-225-3121', email: 'rep.delia@mail.house.gov' },
+                { name: 'García, Chuy', party: 'D', phone: '202-225-3121', email: 'rep.chuy@mail.house.gov' },
+                { name: 'Quigley, Mike', party: 'D', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Casten, Sean', party: 'D', phone: '202-225-3121', email: 'rep.sean@mail.house.gov' },
+                { name: 'Davis, Danny', party: 'D', phone: '202-225-3121', email: 'rep.danny@mail.house.gov' },
+                { name: 'Schakowsky, Jan', party: 'D', phone: '202-225-3121', email: 'rep.jan@mail.house.gov' },
+                { name: 'Schneider, Brad', party: 'D', phone: '202-225-3121', email: 'rep.brad@mail.house.gov' },
+                { name: 'Foster, Bill', party: 'D', phone: '202-225-3121', email: 'rep.bill@mail.house.gov' },
+                { name: 'Bost, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Budzinski, Nicole (Nikki)', party: 'D', phone: '202-225-3121', email: 'rep.(nikki)@mail.house.gov' },
+                { name: 'Underwood, Lauren', party: 'D', phone: '202-225-3121', email: 'rep.lauren@mail.house.gov' },
+                { name: 'Miller, Mary', party: 'R', phone: '202-225-3121', email: 'rep.mary@mail.house.gov' },
+                { name: 'LaHood, Darin', party: 'R', phone: '202-225-3121', email: 'rep.darin@mail.house.gov' },
+            ],
+            'IN': [
+                { name: 'Yakym, Rudy', party: 'R', phone: '202-225-3121', email: 'rep.rudy@mail.house.gov' },
+                { name: 'Stutzman, Marlin', party: 'R', phone: '202-225-3121', email: 'rep.marlin@mail.house.gov' },
+                { name: 'Shreve, Jefferson', party: 'R', phone: '202-225-3121', email: 'rep.jefferson@mail.house.gov' },
+                { name: 'Carson, André', party: 'D', phone: '202-225-3121', email: 'rep.andré@mail.house.gov' },
+                { name: 'Messmer, Mark', party: 'R', phone: '202-225-3121', email: 'rep.mark@mail.house.gov' },
+                { name: 'Houchin, Erin', party: 'R', phone: '202-225-3121', email: 'rep.erin@mail.house.gov' },
+            ],
+            'KS': [
+                { name: 'Mann, Tracey', party: 'R', phone: '202-225-3121', email: 'rep.tracey@mail.house.gov' },
+                { name: 'Davids, Sharice', party: 'D', phone: '202-225-3121', email: 'rep.sharice@mail.house.gov' },
+                { name: 'Estes, Ron', party: 'R', phone: '202-225-3121', email: 'rep.ron@mail.house.gov' },
+            ],
+            'KY': [
+                { name: 'Guthrie, Brett', party: 'R', phone: '202-225-3121', email: 'rep.brett@mail.house.gov' },
+                { name: 'McGarvey, Morgan', party: 'D', phone: '202-225-3121', email: 'rep.morgan@mail.house.gov' },
+                { name: 'Rogers, Hal', party: 'R', phone: '202-225-3121', email: 'rep.hal@mail.house.gov' },
+                { name: 'Barr, Andy', party: 'R', phone: '202-225-3121', email: 'rep.andy@mail.house.gov' },
+            ],
+            'LA': [
+                { name: 'Scalise, Steve', party: 'R', phone: '202-225-3121', email: 'rep.steve@mail.house.gov' },
+                { name: 'Carter, Troy', party: 'D', phone: '202-225-3121', email: 'rep.troy@mail.house.gov' },
+                { name: 'Higgins, Clay', party: 'R', phone: '202-225-3121', email: 'rep.clay@mail.house.gov' },
+                { name: 'Johnson, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Letlow, Julia', party: 'R', phone: '202-225-3121', email: 'rep.julia@mail.house.gov' },
+                { name: 'Fields, Cleo', party: 'D', phone: '202-225-3121', email: 'rep.cleo@mail.house.gov' },
+            ],
+            'MA': [
+                { name: 'Neal, Richard', party: 'D', phone: '202-225-3121', email: 'rep.richard@mail.house.gov' },
+                { name: 'Trahan, Lori', party: 'D', phone: '202-225-3121', email: 'rep.lori@mail.house.gov' },
+                { name: 'Auchincloss, Jake', party: 'D', phone: '202-225-3121', email: 'rep.jake@mail.house.gov' },
+                { name: 'Clark, Katherine', party: 'D', phone: '202-225-3121', email: 'rep.katherine@mail.house.gov' },
+                { name: 'Moulton, Seth', party: 'D', phone: '202-225-3121', email: 'rep.seth@mail.house.gov' },
+                { name: 'Pressley, Ayanna', party: 'D', phone: '202-225-3121', email: 'rep.ayanna@mail.house.gov' },
+                { name: 'Lynch, Stephen', party: 'D', phone: '202-225-3121', email: 'rep.stephen@mail.house.gov' },
+                { name: 'Keating, William R.', party: 'D', phone: '202-225-3121', email: 'rep.r.@mail.house.gov' },
+            ],
+            'MD': [
+                { name: 'Harris, Andy', party: 'R', phone: '202-225-3121', email: 'rep.andy@mail.house.gov' },
+                { name: 'Olszewski, Johnny', party: 'D', phone: '202-225-3121', email: 'rep.johnny@mail.house.gov' },
+                { name: 'Elfreth, Sarah', party: 'D', phone: '202-225-3121', email: 'rep.sarah@mail.house.gov' },
+                { name: 'Ivey, Glenn', party: 'D', phone: '202-225-3121', email: 'rep.glenn@mail.house.gov' },
+                { name: 'Hoyer, Steny', party: 'D', phone: '202-225-3121', email: 'rep.steny@mail.house.gov' },
+                { name: 'McClain Delaney, April', party: 'D', phone: '202-225-3121', email: 'rep.april@mail.house.gov' },
+                { name: 'Raskin, Jamie', party: 'D', phone: '202-225-3121', email: 'rep.jamie@mail.house.gov' },
+            ],
+            'ME': [
+                { name: 'Pingree, Chellie', party: 'D', phone: '202-225-3121', email: 'rep.chellie@mail.house.gov' },
+            ],
+            'MI': [
+                { name: 'Moolenaar, John', party: 'R', phone: '202-225-3121', email: 'rep.john@mail.house.gov' },
+                { name: 'Scholten, Hillary', party: 'D', phone: '202-225-3121', email: 'rep.hillary@mail.house.gov' },
+                { name: 'Huizenga, Bill', party: 'R', phone: '202-225-3121', email: 'rep.bill@mail.house.gov' },
+                { name: 'Walberg, Tim', party: 'R', phone: '202-225-3121', email: 'rep.tim@mail.house.gov' },
+                { name: 'Dingell, Debbie', party: 'D', phone: '202-225-3121', email: 'rep.debbie@mail.house.gov' },
+                { name: 'McDonald Rivet, Kristen', party: 'D', phone: '202-225-3121', email: 'rep.kristen@mail.house.gov' },
+                { name: 'McClain, Lisa', party: 'R', phone: '202-225-3121', email: 'rep.lisa@mail.house.gov' },
+                { name: 'Stevens, Haley', party: 'D', phone: '202-225-3121', email: 'rep.haley@mail.house.gov' },
+                { name: 'Tlaib, Rashida', party: 'D', phone: '202-225-3121', email: 'rep.rashida@mail.house.gov' },
+                { name: 'Thanedar, Shri', party: 'D', phone: '202-225-3121', email: 'rep.shri@mail.house.gov' },
+            ],
+            'MN': [
+                { name: 'Finstad, Brad', party: 'R', phone: '202-225-3121', email: 'rep.brad@mail.house.gov' },
+                { name: 'Craig, Angie', party: 'D', phone: '202-225-3121', email: 'rep.angie@mail.house.gov' },
+                { name: 'Morrison, Kelly', party: 'D', phone: '202-225-3121', email: 'rep.kelly@mail.house.gov' },
+                { name: 'McCollum, Betty', party: 'D', phone: '202-225-3121', email: 'rep.betty@mail.house.gov' },
+                { name: 'Omar, Ilhan', party: 'D', phone: '202-225-3121', email: 'rep.ilhan@mail.house.gov' },
+                { name: 'Emmer, Tom', party: 'R', phone: '202-225-3121', email: 'rep.tom@mail.house.gov' },
+                { name: 'Fischbach, Michelle', party: 'R', phone: '202-225-3121', email: 'rep.michelle@mail.house.gov' },
+                { name: 'Stauber, Pete', party: 'R', phone: '202-225-3121', email: 'rep.pete@mail.house.gov' },
+            ],
+            'MO': [
+                { name: 'Bell, Wesley', party: 'D', phone: '202-225-3121', email: 'rep.wesley@mail.house.gov' },
+                { name: 'Wagner, Ann', party: 'R', phone: '202-225-3121', email: 'rep.ann@mail.house.gov' },
+                { name: 'Alford, Mark', party: 'R', phone: '202-225-3121', email: 'rep.mark@mail.house.gov' },
+                { name: 'Cleaver, Emanuel', party: 'D', phone: '202-225-3121', email: 'rep.emanuel@mail.house.gov' },
+                { name: 'Graves, Sam', party: 'R', phone: '202-225-3121', email: 'rep.sam@mail.house.gov' },
+                { name: 'Smith, Jason', party: 'R', phone: '202-225-3121', email: 'rep.jason@mail.house.gov' },
+            ],
+            'MS': [
+                { name: 'Kelly, Trent', party: 'R', phone: '202-225-3121', email: 'rep.trent@mail.house.gov' },
+                { name: 'Thompson, Bennie', party: 'D', phone: '202-225-3121', email: 'rep.bennie@mail.house.gov' },
+                { name: 'Guest, Michael', party: 'R', phone: '202-225-3121', email: 'rep.michael@mail.house.gov' },
+                { name: 'Ezell, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+            ],
+            'MT': [
+                { name: 'Zinke, Ryan', party: 'R', phone: '202-225-3121', email: 'rep.ryan@mail.house.gov' },
+            ],
+            'NC': [
+                { name: 'Ross, Deborah', party: 'D', phone: '202-225-3121', email: 'rep.deborah@mail.house.gov' },
+                { name: 'Murphy, Gregory', party: 'R', phone: '202-225-3121', email: 'rep.gregory@mail.house.gov' },
+                { name: 'Foushee, Valerie', party: 'D', phone: '202-225-3121', email: 'rep.valerie@mail.house.gov' },
+                { name: 'Foxx, Virginia', party: 'R', phone: '202-225-3121', email: 'rep.virginia@mail.house.gov' },
+                { name: 'McDowell, Addison', party: 'R', phone: '202-225-3121', email: 'rep.addison@mail.house.gov' },
+                { name: 'Rouzer, David', party: 'R', phone: '202-225-3121', email: 'rep.david@mail.house.gov' },
+                { name: 'Harris, Mark Everette', party: 'R', phone: '202-225-3121', email: 'rep.everette@mail.house.gov' },
+                { name: 'Hudson, Richard', party: 'R', phone: '202-225-3121', email: 'rep.richard@mail.house.gov' },
+                { name: 'Harrigan, Pat', party: 'R', phone: '202-225-3121', email: 'rep.pat@mail.house.gov' },
+                { name: 'Edwards, Charles (Chuck)', party: 'R', phone: '202-225-3121', email: 'rep.(chuck)@mail.house.gov' },
+                { name: 'Adams, Alma', party: 'D', phone: '202-225-3121', email: 'rep.alma@mail.house.gov' },
+            ],
+            'ND': [
+                { name: 'Fedorchak, Julie', party: 'R', phone: '202-225-3121', email: 'rep.julie@mail.house.gov' },
+            ],
+            'NE': [
+                { name: 'Flood, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Bacon, Don', party: 'R', phone: '202-225-3121', email: 'rep.don@mail.house.gov' },
+                { name: 'Smith, Adrian', party: 'R', phone: '202-225-3121', email: 'rep.adrian@mail.house.gov' },
+            ],
+            'NH': [
+                { name: 'Pappas, Chris', party: 'D', phone: '202-225-3121', email: 'rep.chris@mail.house.gov' },
+                { name: 'Goodlander, Maggie', party: 'D', phone: '202-225-3121', email: 'rep.maggie@mail.house.gov' },
+            ],
+            'NJ': [
+                { name: 'Norcross, Donald', party: 'D', phone: '202-225-3121', email: 'rep.donald@mail.house.gov' },
+                { name: 'Van Drew, Jefferson', party: 'R', phone: '202-225-3121', email: 'rep.jefferson@mail.house.gov' },
+                { name: 'Conaway, Herbert', party: 'D', phone: '202-225-3121', email: 'rep.herbert@mail.house.gov' },
+                { name: 'Smith, Chris', party: 'R', phone: '202-225-3121', email: 'rep.chris@mail.house.gov' },
+                { name: 'Gottheimer, Josh', party: 'D', phone: '202-225-3121', email: 'rep.josh@mail.house.gov' },
+                { name: 'Pallone, Frank', party: 'D', phone: '202-225-3121', email: 'rep.frank@mail.house.gov' },
+                { name: 'Menendez, Robert Jacobsen', party: 'D', phone: '202-225-3121', email: 'rep.jacobsen@mail.house.gov' },
+                { name: 'Pou, Nellie', party: 'D', phone: '202-225-3121', email: 'rep.nellie@mail.house.gov' },
+                { name: 'McIver, LaMonica', party: 'D', phone: '202-225-3121', email: 'rep.lamonica@mail.house.gov' },
+                { name: 'Watson Coleman, Bonnie', party: 'D', phone: '202-225-3121', email: 'rep.bonnie@mail.house.gov' },
+            ],
+            'NM': [
+                { name: 'Stansbury, Melanie', party: 'D', phone: '202-225-3121', email: 'rep.melanie@mail.house.gov' },
+                { name: 'Vasquez, Gabriel (Gabe)', party: 'D', phone: '202-225-3121', email: 'rep.(gabe)@mail.house.gov' },
+                { name: 'Leger Fernandez, Teresa', party: 'D', phone: '202-225-3121', email: 'rep.teresa@mail.house.gov' },
+            ],
+            'NV': [
+                { name: 'Titus, Dina', party: 'D', phone: '202-225-3121', email: 'rep.dina@mail.house.gov' },
+                { name: 'Amodei, Mark', party: 'R', phone: '202-225-3121', email: 'rep.mark@mail.house.gov' },
+                { name: 'Lee, Susie', party: 'D', phone: '202-225-3121', email: 'rep.susie@mail.house.gov' },
+                { name: 'Horsford, Steven', party: 'D', phone: '202-225-3121', email: 'rep.steven@mail.house.gov' },
             ],
             'NY': [
-                { name: 'Hakeem Jeffries', party: 'D', phone: '202-225-5936', email: 'rep.jeffries@mail.house.gov' }
+                { name: 'LaLota, Nicolas', party: 'R', phone: '202-225-3121', email: 'rep.nicolas@mail.house.gov' },
+                { name: 'Garbarino, Andrew', party: 'R', phone: '202-225-3121', email: 'rep.andrew@mail.house.gov' },
+                { name: 'Suozzi, Thomas', party: 'D', phone: '202-225-3121', email: 'rep.thomas@mail.house.gov' },
+                { name: 'Gillen, Laura', party: 'D', phone: '202-225-3121', email: 'rep.laura@mail.house.gov' },
+                { name: 'Meeks, Gregory', party: 'D', phone: '202-225-3121', email: 'rep.gregory@mail.house.gov' },
+                { name: 'Meng, Grace', party: 'D', phone: '202-225-3121', email: 'rep.grace@mail.house.gov' },
+                { name: 'Velázquez, Nydia', party: 'D', phone: '202-225-3121', email: 'rep.nydia@mail.house.gov' },
+                { name: 'Jeffries, Hakeem', party: 'D', phone: '202-225-3121', email: 'rep.hakeem@mail.house.gov' },
+                { name: 'Clarke, Yvette', party: 'D', phone: '202-225-3121', email: 'rep.yvette@mail.house.gov' },
+                { name: 'Goldman, Dan', party: 'D', phone: '202-225-3121', email: 'rep.dan@mail.house.gov' },
+                { name: 'Malliotakis, Nicole', party: 'R', phone: '202-225-3121', email: 'rep.nicole@mail.house.gov' },
+                { name: 'Nadler, Jerrold', party: 'D', phone: '202-225-3121', email: 'rep.jerrold@mail.house.gov' },
+                { name: 'Espaillat, Adriano', party: 'D', phone: '202-225-3121', email: 'rep.adriano@mail.house.gov' },
+                { name: 'Ocasio-Cortez, Alexandria', party: 'D', phone: '202-225-3121', email: 'rep.alexandria@mail.house.gov' },
+                { name: 'Torres, Ritchie', party: 'D', phone: '202-225-3121', email: 'rep.ritchie@mail.house.gov' },
+                { name: 'Latimer, George', party: 'D', phone: '202-225-3121', email: 'rep.george@mail.house.gov' },
+                { name: 'Lawler, Michael', party: 'R', phone: '202-225-3121', email: 'rep.michael@mail.house.gov' },
+                { name: 'Tonko, Paul', party: 'D', phone: '202-225-3121', email: 'rep.paul@mail.house.gov' },
+                { name: 'Mannion, John', party: 'D', phone: '202-225-3121', email: 'rep.john@mail.house.gov' },
+                { name: 'Tenney, Claudia', party: 'R', phone: '202-225-3121', email: 'rep.claudia@mail.house.gov' },
+                { name: 'Morelle, Joseph', party: 'D', phone: '202-225-3121', email: 'rep.joseph@mail.house.gov' },
+                { name: 'Kennedy, Timothy', party: 'D', phone: '202-225-3121', email: 'rep.timothy@mail.house.gov' },
             ],
             'OH': [
-                { name: 'Jim Jordan', party: 'R', phone: '202-225-2676', email: 'rep.jordan@mail.house.gov' }
+                { name: 'Landsman, Greg', party: 'D', phone: '202-225-3121', email: 'rep.greg@mail.house.gov' },
+                { name: 'Taylor, David', party: 'R', phone: '202-225-3121', email: 'rep.david@mail.house.gov' },
+                { name: 'Beatty, Joyce', party: 'D', phone: '202-225-3121', email: 'rep.joyce@mail.house.gov' },
+                { name: 'Jordan, Jim', party: 'R', phone: '202-225-3121', email: 'rep.jim@mail.house.gov' },
+                { name: 'Latta, Robert', party: 'R', phone: '202-225-3121', email: 'rep.robert@mail.house.gov' },
+                { name: 'Rulli, Michael', party: 'R', phone: '202-225-3121', email: 'rep.michael@mail.house.gov' },
+                { name: 'Davidson, Warren', party: 'R', phone: '202-225-3121', email: 'rep.warren@mail.house.gov' },
+                { name: 'Kaptur, Marcy', party: 'D', phone: '202-225-3121', email: 'rep.marcy@mail.house.gov' },
+                { name: 'Turner, Michael', party: 'R', phone: '202-225-3121', email: 'rep.michael@mail.house.gov' },
+                { name: 'Brown, Shontel', party: 'D', phone: '202-225-3121', email: 'rep.shontel@mail.house.gov' },
+                { name: 'Balderson, Troy', party: 'R', phone: '202-225-3121', email: 'rep.troy@mail.house.gov' },
+                { name: 'Sykes, Emilia', party: 'D', phone: '202-225-3121', email: 'rep.emilia@mail.house.gov' },
+                { name: 'Joyce, David', party: 'R', phone: '202-225-3121', email: 'rep.david@mail.house.gov' },
+                { name: 'Carey, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+            ],
+            'OK': [
+                { name: 'Hern, Kevin', party: 'R', phone: '202-225-3121', email: 'rep.kevin@mail.house.gov' },
+                { name: 'Brecheen, Josh', party: 'R', phone: '202-225-3121', email: 'rep.josh@mail.house.gov' },
+                { name: 'Lucas, Frank', party: 'R', phone: '202-225-3121', email: 'rep.frank@mail.house.gov' },
+                { name: 'Cole, Tom', party: 'R', phone: '202-225-3121', email: 'rep.tom@mail.house.gov' },
+                { name: 'Bice, Stephanie', party: 'R', phone: '202-225-3121', email: 'rep.stephanie@mail.house.gov' },
+            ],
+            'OR': [
+                { name: 'Bentz, Cliff', party: 'R', phone: '202-225-3121', email: 'rep.cliff@mail.house.gov' },
+                { name: 'Dexter, Maxine', party: 'D', phone: '202-225-3121', email: 'rep.maxine@mail.house.gov' },
+                { name: 'Hoyle, Valerie', party: 'D', phone: '202-225-3121', email: 'rep.valerie@mail.house.gov' },
+                { name: 'Bynum, Janelle', party: 'D', phone: '202-225-3121', email: 'rep.janelle@mail.house.gov' },
+            ],
+            'PA': [
+                { name: 'Boyle, Brendan', party: 'D', phone: '202-225-3121', email: 'rep.brendan@mail.house.gov' },
+                { name: 'Evans, Dwight', party: 'D', phone: '202-225-3121', email: 'rep.dwight@mail.house.gov' },
+                { name: 'Dean, Madeleine', party: 'D', phone: '202-225-3121', email: 'rep.madeleine@mail.house.gov' },
+                { name: 'Scanlon, Mary', party: 'D', phone: '202-225-3121', email: 'rep.mary@mail.house.gov' },
+                { name: 'Houlahan, Chrissy', party: 'D', phone: '202-225-3121', email: 'rep.chrissy@mail.house.gov' },
+                { name: 'Bresnahan, Robert', party: 'R', phone: '202-225-3121', email: 'rep.robert@mail.house.gov' },
+                { name: 'Meuser, Daniel', party: 'R', phone: '202-225-3121', email: 'rep.daniel@mail.house.gov' },
+                { name: 'Smucker, Lloyd', party: 'R', phone: '202-225-3121', email: 'rep.lloyd@mail.house.gov' },
+                { name: 'Lee, Summer', party: 'D', phone: '202-225-3121', email: 'rep.summer@mail.house.gov' },
+                { name: 'Joyce, John', party: 'R', phone: '202-225-3121', email: 'rep.john@mail.house.gov' },
+                { name: 'Reschenthaler, Guy', party: 'R', phone: '202-225-3121', email: 'rep.guy@mail.house.gov' },
+                { name: 'Thompson, Glenn', party: 'R', phone: '202-225-3121', email: 'rep.glenn@mail.house.gov' },
+                { name: 'Kelly, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Deluzio, Chris', party: 'D', phone: '202-225-3121', email: 'rep.chris@mail.house.gov' },
+            ],
+            'RI': [
+                { name: 'Amo, Gabe', party: 'D', phone: '202-225-3121', email: 'rep.gabe@mail.house.gov' },
+                { name: 'Magaziner, Seth', party: 'D', phone: '202-225-3121', email: 'rep.seth@mail.house.gov' },
+            ],
+            'SC': [
+                { name: 'Biggs, Sheri', party: 'R', phone: '202-225-3121', email: 'rep.sheri@mail.house.gov' },
+                { name: 'Timmons, William', party: 'R', phone: '202-225-3121', email: 'rep.william@mail.house.gov' },
+                { name: 'Clyburn, Jim', party: 'D', phone: '202-225-3121', email: 'rep.jim@mail.house.gov' },
+                { name: 'Fry, Russell', party: 'R', phone: '202-225-3121', email: 'rep.russell@mail.house.gov' },
+            ],
+            'SD': [
+                { name: 'Johnson, Dusty', party: 'R', phone: '202-225-3121', email: 'rep.dusty@mail.house.gov' },
+            ],
+            'TN': [
+                { name: 'Harshbarger, Diana', party: 'R', phone: '202-225-3121', email: 'rep.diana@mail.house.gov' },
+                { name: 'Fleischmann, Chuck', party: 'R', phone: '202-225-3121', email: 'rep.chuck@mail.house.gov' },
+                { name: 'DesJarlais, Scott', party: 'R', phone: '202-225-3121', email: 'rep.scott@mail.house.gov' },
+                { name: 'Rose, John W.', party: 'R', phone: '202-225-3121', email: 'rep.w.@mail.house.gov' },
+                { name: 'Van Epps, Matt', party: 'R', phone: '202-225-3121', email: 'rep.matt@mail.house.gov' },
+                { name: 'Kustoff, David', party: 'R', phone: '202-225-3121', email: 'rep.david@mail.house.gov' },
+                { name: 'Cohen, Steve', party: 'D', phone: '202-225-3121', email: 'rep.steve@mail.house.gov' },
             ],
             'TX': [
-                { name: 'Brian Babin', party: 'R', phone: '202-225-1555', email: 'rep.babin@mail.house.gov' }
-            ]
+                { name: 'Moran, Nathaniel', party: 'R', phone: '202-225-3121', email: 'rep.nathaniel@mail.house.gov' },
+                { name: 'Self, Keith', party: 'R', phone: '202-225-3121', email: 'rep.keith@mail.house.gov' },
+                { name: 'Fallon, Pat', party: 'R', phone: '202-225-3121', email: 'rep.pat@mail.house.gov' },
+                { name: 'Gooden, Lance', party: 'R', phone: '202-225-3121', email: 'rep.lance@mail.house.gov' },
+                { name: 'Ellzey, Jake', party: 'R', phone: '202-225-3121', email: 'rep.jake@mail.house.gov' },
+                { name: 'Fletcher, Lizzie', party: 'D', phone: '202-225-3121', email: 'rep.lizzie@mail.house.gov' },
+                { name: 'Luttrell, Morgan', party: 'R', phone: '202-225-3121', email: 'rep.morgan@mail.house.gov' },
+                { name: 'Green, Al', party: 'D', phone: '202-225-3121', email: 'rep.al@mail.house.gov' },
+                { name: 'McCaul, Michael', party: 'R', phone: '202-225-3121', email: 'rep.michael@mail.house.gov' },
+                { name: 'Pfluger, August', party: 'R', phone: '202-225-3121', email: 'rep.august@mail.house.gov' },
+                { name: 'Goldman, Craig', party: 'R', phone: '202-225-3121', email: 'rep.craig@mail.house.gov' },
+                { name: 'Jackson, Ronny', party: 'R', phone: '202-225-3121', email: 'rep.ronny@mail.house.gov' },
+                { name: 'Weber, Randy', party: 'R', phone: '202-225-3121', email: 'rep.randy@mail.house.gov' },
+                { name: 'De La Cruz, Mónica', party: 'R', phone: '202-225-3121', email: 'rep.mónica@mail.house.gov' },
+                { name: 'Sessions, Pete', party: 'R', phone: '202-225-3121', email: 'rep.pete@mail.house.gov' },
+                { name: 'Menefee, Christian', party: 'D', phone: '202-225-3121', email: 'rep.christian@mail.house.gov' },
+                { name: 'Arrington, Jodey', party: 'R', phone: '202-225-3121', email: 'rep.jodey@mail.house.gov' },
+                { name: 'Castro, Joaquin', party: 'D', phone: '202-225-3121', email: 'rep.joaquin@mail.house.gov' },
+                { name: 'Nehls, Troy', party: 'R', phone: '202-225-3121', email: 'rep.troy@mail.house.gov' },
+                { name: 'Gonzales, Tony', party: 'R', phone: '202-225-3121', email: 'rep.tony@mail.house.gov' },
+                { name: 'Van Duyne, Beth', party: 'R', phone: '202-225-3121', email: 'rep.beth@mail.house.gov' },
+                { name: 'Williams, Roger', party: 'R', phone: '202-225-3121', email: 'rep.roger@mail.house.gov' },
+                { name: 'Cloud, Michael', party: 'R', phone: '202-225-3121', email: 'rep.michael@mail.house.gov' },
+                { name: 'Cuellar, Henry', party: 'D', phone: '202-225-3121', email: 'rep.henry@mail.house.gov' },
+                { name: 'Crockett, Jasmine', party: 'D', phone: '202-225-3121', email: 'rep.jasmine@mail.house.gov' },
+                { name: 'Carter, John R.', party: 'R', phone: '202-225-3121', email: 'rep.r.@mail.house.gov' },
+                { name: 'Johnson, Julie', party: 'D', phone: '202-225-3121', email: 'rep.julie@mail.house.gov' },
+                { name: 'Veasey, Marc', party: 'D', phone: '202-225-3121', email: 'rep.marc@mail.house.gov' },
+                { name: 'Casar, Gregorio', party: 'D', phone: '202-225-3121', email: 'rep.gregorio@mail.house.gov' },
+                { name: 'Babin, Brian', party: 'R', phone: '202-225-3121', email: 'rep.brian@mail.house.gov' },
+                { name: 'Doggett, Lloyd', party: 'D', phone: '202-225-3121', email: 'rep.lloyd@mail.house.gov' },
+                { name: 'Hunt, Wesley', party: 'R', phone: '202-225-3121', email: 'rep.wesley@mail.house.gov' },
+            ],
+            'UT': [
+                { name: 'Moore, Blake', party: 'R', phone: '202-225-3121', email: 'rep.blake@mail.house.gov' },
+                { name: 'Maloy, Celeste', party: 'R', phone: '202-225-3121', email: 'rep.celeste@mail.house.gov' },
+                { name: 'Kennedy, Mike', party: 'R', phone: '202-225-3121', email: 'rep.mike@mail.house.gov' },
+                { name: 'Owens, Burgess', party: 'R', phone: '202-225-3121', email: 'rep.burgess@mail.house.gov' },
+            ],
+            'VA': [
+                { name: 'Wittman, Robert', party: 'R', phone: '202-225-3121', email: 'rep.robert@mail.house.gov' },
+                { name: 'Kiggans, Jennifer', party: 'R', phone: '202-225-3121', email: 'rep.jennifer@mail.house.gov' },
+                { name: 'Scott, Bobby', party: 'D', phone: '202-225-3121', email: 'rep.bobby@mail.house.gov' },
+                { name: 'McClellan, Jennifer', party: 'D', phone: '202-225-3121', email: 'rep.jennifer@mail.house.gov' },
+                { name: 'Cline, Ben', party: 'R', phone: '202-225-3121', email: 'rep.ben@mail.house.gov' },
+                { name: 'Beyer, Donald', party: 'D', phone: '202-225-3121', email: 'rep.donald@mail.house.gov' },
+                { name: 'Griffith, Morgan', party: 'R', phone: '202-225-3121', email: 'rep.morgan@mail.house.gov' },
+                { name: 'Subramanyam, Suhas', party: 'D', phone: '202-225-3121', email: 'rep.suhas@mail.house.gov' },
+                { name: 'Walkinshaw, James', party: 'D', phone: '202-225-3121', email: 'rep.james@mail.house.gov' },
+            ],
+            'VT': [
+                { name: 'Balint, Becca', party: 'D', phone: '202-225-3121', email: 'rep.becca@mail.house.gov' },
+            ],
+            'WA': [
+                { name: 'DelBene, Suzan', party: 'D', phone: '202-225-3121', email: 'rep.suzan@mail.house.gov' },
+                { name: 'Larsen, Rick', party: 'D', phone: '202-225-3121', email: 'rep.rick@mail.house.gov' },
+                { name: 'Newhouse, Dan', party: 'R', phone: '202-225-3121', email: 'rep.dan@mail.house.gov' },
+                { name: 'Baumgartner, Michael', party: 'R', phone: '202-225-3121', email: 'rep.michael@mail.house.gov' },
+                { name: 'Randall, Emily', party: 'D', phone: '202-225-3121', email: 'rep.emily@mail.house.gov' },
+                { name: 'Strickland, Marilyn', party: 'D', phone: '202-225-3121', email: 'rep.marilyn@mail.house.gov' },
+            ],
+            'WI': [
+                { name: 'Steil, Bryan', party: 'R', phone: '202-225-3121', email: 'rep.bryan@mail.house.gov' },
+                { name: 'Van Orden, Derrick', party: 'R', phone: '202-225-3121', email: 'rep.derrick@mail.house.gov' },
+                { name: 'Moore, Gwen', party: 'D', phone: '202-225-3121', email: 'rep.gwen@mail.house.gov' },
+                { name: 'Fitzgerald, Scott', party: 'R', phone: '202-225-3121', email: 'rep.scott@mail.house.gov' },
+                { name: 'Grothman, Glenn', party: 'R', phone: '202-225-3121', email: 'rep.glenn@mail.house.gov' },
+                { name: 'Tiffany, Thomas', party: 'R', phone: '202-225-3121', email: 'rep.thomas@mail.house.gov' },
+                { name: 'Wied, Tony', party: 'R', phone: '202-225-3121', email: 'rep.tony@mail.house.gov' },
+            ],
+            'WV': [
+                { name: 'Miller, Carol', party: 'R', phone: '202-225-3121', email: 'rep.carol@mail.house.gov' },
+            ],
+            'WY': [
+                { name: 'Hageman, Harriet', party: 'R', phone: '202-225-3121', email: 'rep.harriet@mail.house.gov' },
+            ],
         };
-
-        const states = ['AL', 'AK', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'FL', 'GA', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'OH', 'OK', 'OR', 'PA', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VA', 'WA', 'WV', 'WI', 'WY'];
         
-        const stateNames = { 'AL': 'Alabama', 'AK': 'Alaska', 'AZ': 'Arizona', 'AR': 'Arkansas', 'CA': 'California', 'CO': 'Colorado', 'CT': 'Connecticut', 'DE': 'Delaware', 'FL': 'Florida', 'GA': 'Georgia', 'HI': 'Hawaii', 'ID': 'Idaho', 'IL': 'Illinois', 'IN': 'Indiana', 'IA': 'Iowa', 'KS': 'Kansas', 'KY': 'Kentucky', 'LA': 'Louisiana', 'ME': 'Maine', 'MD': 'Maryland', 'MA': 'Massachusetts', 'MI': 'Michigan', 'MN': 'Minnesota', 'MS': 'Mississippi', 'MO': 'Missouri', 'MT': 'Montana', 'NE': 'Nebraska', 'NV': 'Nevada', 'NH': 'New Hampshire', 'NJ': 'New Jersey', 'NM': 'New Mexico', 'NY': 'New York', 'NC': 'North Carolina', 'ND': 'North Dakota', 'OH': 'Ohio', 'OK': 'Oklahoma', 'OR': 'Oregon', 'PA': 'Pennsylvania', 'RI': 'Rhode Island', 'SC': 'South Carolina', 'SD': 'South Dakota', 'TN': 'Tennessee', 'TX': 'Texas', 'UT': 'Utah', 'VT': 'Vermont', 'VA': 'Virginia', 'WA': 'Washington', 'WV': 'West Virginia', 'WI': 'Wisconsin', 'WY': 'Wyoming' };
-
-        let selected = null;
-
-        function init() {
-            let total = 0, dems = 0, reps = 0;
-            Object.keys(members).forEach(s => {
-                members[s].forEach(m => {
-                    total++;
-                    if (m.party === 'D') dems++;
-                    else reps++;
-                });
-            });
-
-            document.getElementById('statsContainer').innerHTML = `
-                <div class="stat-card"><div class="stat-number">${total}</div><div class="stat-label">Total</div></div>
-                <div class="stat-card"><div class="stat-number">${dems}</div><div class="stat-label">Democrats</div></div>
-                <div class="stat-card"><div class="stat-number">${reps}</div><div class="stat-label">Republicans</div></div>
-                <div class="stat-card"><div class="stat-number">${Object.keys(members).length}</div><div class="stat-label">States</div></div>
-            `;
-
+        let selectedState = null;
+        
+        function initStates() {
             const stateList = document.getElementById('stateList');
-            Object.keys(members).sort().forEach(s => {
+            Object.keys(members).sort().forEach(state => {
                 const btn = document.createElement('button');
                 btn.className = 'state-btn';
-                btn.textContent = `${s} (${members[s].length})`;
-                btn.onclick = () => selectState(s, btn);
+                btn.textContent = `${state} (${members[state].length})`;
+                btn.onclick = () => selectState(state, btn);
                 stateList.appendChild(btn);
             });
-
-            document.getElementById('searchInput').addEventListener('input', display);
-            document.getElementById('partyFilter').addEventListener('change', display);
         }
-
-        function selectState(s, btn) {
+        
+        function selectState(state, btn) {
             document.querySelectorAll('.state-btn.active').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            selected = s;
-            document.getElementById('selectedState').textContent = `Members from ${stateNames[s]}`;
-            display();
+            selectedState = state;
+            document.getElementById('selectedState').textContent = `Members from ${state}`;
+            displayMembers();
         }
-
-        function display() {
+        
+        function displayMembers() {
             const list = document.getElementById('membersList');
             list.innerHTML = '';
             
-            if (!selected) return;
-
-            let data = members[selected];
+            if (!selectedState) return;
+            
+            let data = members[selectedState];
             const search = document.getElementById('searchInput').value.toLowerCase();
             const party = document.getElementById('partyFilter').value;
-
-            data = data.filter(m => m.name.toLowerCase().includes(search) && (!party || m.party === party));
-
+            
+            data = data.filter(m => 
+                m.name.toLowerCase().includes(search) && 
+                (!party || m.party === party)
+            );
+            
             if (!data.length) {
                 list.innerHTML = '<div class="no-results">No members found</div>';
                 return;
             }
-
+            
             data.forEach(m => {
-                const init = m.name.split(' ').map(n => n[0]).join('').substring(0, 2);
-                const pc = m.party === 'D' ? 'democrat' : 'republican';
-                const pl = m.party === 'D' ? 'Democrat' : 'Republican';
+                const initials = m.name.split(', ')[1][0] + m.name.split(', ')[0][0];
+                const partyClass = m.party === 'D' ? 'democrat' : 'republican';
+                const partyLabel = m.party === 'D' ? 'Democrat' : 'Republican';
+                const phoneDigits = m.phone.replace(/[^\d]/g, '');
                 
-                list.innerHTML += `
-                    <div class="member-card">
-                        <div class="member-header">
-                            <div class="member-avatar">${init}</div>
-                            <div>
-                                <div class="member-name">${m.name}</div>
-                                <div class="member-party ${pc}">${pl}</div>
-                            </div>
+                const card = document.createElement('div');
+                card.className = 'member-card';
+                card.innerHTML = `
+                    <div class="member-header">
+                        <div class="member-avatar">${initials}</div>
+                        <div>
+                            <div class="member-name">${m.name}</div>
+                            <div class="member-party ${partyClass}">${partyLabel}</div>
                         </div>
-                        <div class="member-contact">
-                            <div class="contact-line">
-                                <span class="contact-label">Phone</span>
-                                <div class="contact-data"><a href="tel:+1-${m.phone.replace(/[^\d]/g, '')}">${m.phone}</a></div>
-                            </div>
-                            <div class="contact-line">
-                                <span class="contact-label">Email</span>
-                                <div class="contact-data"><a href="mailto:${m.email}">${m.email}</a></div>
-                            </div>
-                            <div class="action-buttons">
-                                <a href="tel:+1-${m.phone.replace(/[^\d]/g, '')}" class="action-btn phone">📞</a>
-                                <a href="mailto:${m.email}" class="action-btn email">✉️</a>
-                            </div>
+                    </div>
+                    <div class="member-contact">
+                        <div class="contact-line">
+                            <span class="contact-label">Phone</span>
+                            <div class="contact-value"><a href="tel:+1-${phoneDigits}">${m.phone}</a></div>
+                        </div>
+                        <div class="contact-line">
+                            <span class="contact-label">Email</span>
+                            <div class="contact-value"><a href="mailto:${m.email}">${m.email}</a></div>
+                        </div>
+                        <div class="action-buttons">
+                            <a href="tel:+1-${phoneDigits}" class="action-btn phone">📞 Call</a>
+                            <a href="mailto:${m.email}" class="action-btn email">✉️ Email</a>
                         </div>
                     </div>
                 `;
+                list.appendChild(card);
             });
         }
-
-        init();
+        
+        document.getElementById('searchInput').addEventListener('input', displayMembers);
+        document.getElementById('partyFilter').addEventListener('change', displayMembers);
+        
+        initStates();
     </script>
 </body>
 </html>
