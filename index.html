@@ -26,36 +26,52 @@
         }
         
         .header {
-            background: linear-gradient(135deg, #1f4788 0%, #2c5aa0 100%);
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
             color: white;
-            padding: 30px;
+            padding: 0;
             border-radius: 8px;
             margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .header-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 0;
+        }
+        
+        .header-text {
+            padding: 25px 30px;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
         }
         
         .header h1 {
             font-size: 28px;
             font-weight: 700;
             margin-bottom: 10px;
+            color: #ff6b35;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
         }
         
         .header p {
             font-size: 16px;
             opacity: 0.95;
+            color: #ffffff;
         }
         
         .bill-link {
-            background: #f0f7ff;
-            border-left: 4px solid #1f4788;
+            background: #1a1a1a;
+            border-left: 4px solid #ff6b35;
             padding: 15px;
             border-radius: 4px;
             margin-bottom: 20px;
             font-size: 14px;
-            color: #333;
+            color: #fff;
         }
         
         .bill-link a {
-            color: #1f4788;
+            color: #ff6b35;
             font-weight: 600;
         }
         
@@ -108,7 +124,7 @@
         .stat-number {
             font-size: 32px;
             font-weight: 700;
-            color: #1f4788;
+            color: #ff6b35;
         }
         
         .stat-label {
@@ -140,22 +156,22 @@
         
         .state-btn:hover {
             background: #f0f0f0;
-            border-color: #1f4788;
+            border-color: #ff6b35;
         }
         
         .state-btn.active {
-            background: #1f4788;
+            background: #ff6b35;
             color: white;
-            border-color: #1f4788;
+            border-color: #ff6b35;
         }
         
         .members-header {
             font-size: 20px;
             font-weight: 700;
-            color: #1f4788;
+            color: #ff6b35;
             margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #2c5aa0;
+            border-bottom: 3px solid #ff4500;
         }
         
         .members-grid {
@@ -189,7 +205,7 @@
             width: 45px;
             height: 45px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #2c5aa0 0%, #1f4788 100%);
+            background: linear-gradient(135deg, #ff6b35 0%, #ff4500 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -202,7 +218,7 @@
         .member-name {
             font-size: 15px;
             font-weight: 700;
-            color: #1f4788;
+            color: #ff6b35;
         }
         
         .member-party {
@@ -220,8 +236,8 @@
         }
         
         .member-party.republican {
-            background: #fcebee;
-            color: #c62828;
+            background: #ffe4e1;
+            color: #ff4500;
         }
         
         .member-contact {
@@ -250,13 +266,14 @@
         }
         
         .contact-value a {
-            color: #1f4788;
+            color: #ff6b35;
             text-decoration: none;
             font-weight: 500;
         }
         
         .contact-value a:hover {
             text-decoration: underline;
+            color: #ff4500;
         }
         
         .action-buttons {
@@ -282,21 +299,21 @@
         }
         
         .action-btn.phone {
-            background: #4CAF50;
+            background: #ff6b35;
             color: white;
         }
         
         .action-btn.phone:hover {
-            background: #45a049;
+            background: #ff4500;
         }
         
         .action-btn.email {
-            background: #FF9800;
+            background: #ffa500;
             color: white;
         }
         
         .action-btn.email:hover {
-            background: #e68900;
+            background: #ff8c00;
         }
         
         .no-results {
@@ -327,8 +344,11 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>Congressional Transparency Vote</h1>
-            <p>Members who voted to refer H.Res.1100 to committee (March 4, 2026)</p>
+            <img src="BlindJustice_background_2b.png" class="header-image" alt="Congressional Transparency">
+            <div class="header-text">
+                <h1>357 Members Vote to Block Transparency</h1>
+                <p>Who are they protecting? Find out who voted against H.Res.1100</p>
+            </div>
         </div>
         
         <div class="bill-link">
